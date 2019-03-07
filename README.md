@@ -5,3 +5,4 @@ Kobe Sagami
 Branden Ramsdell
 Hannah Hollenback
 
+https://discord.gg/7wevPpP
