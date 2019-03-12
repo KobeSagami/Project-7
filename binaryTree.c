@@ -14,11 +14,37 @@ bool Search(BinaryTree* bt, int key)
 
 }
 
+//TODO
 void Insert(BinaryTree* bt, int item)//HH
 {
+    BinaryNode *newNode = (BinaryNode*) malloc(sizeof(BinaryNode));
+    newNode->number = item;
+    newNode->leftNode = NULL;
+    newNode->rightNode = NULL;
     
+    BinaryNode *currentNode;
+    
+    if (bt->root == NULL)
+    {
+        bt->root = newNode;
+    }
+    else
+    {
+        currentNode = bt->root;
+        
+        while (item <= currentNode->number)
+        {
+            currentNode = currentNode->leftNode;
+        }
+        while (item >= currentNode->number)
+        {
+            currentNode = currentNode->rightNode;
+        }
+        currentNode = newNode;
+    }
 }
 
+//TODO
 void Printinorder(BinaryTree* bt)
 {
     BinaryNode *lastNode = bt->root;
