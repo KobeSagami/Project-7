@@ -9,6 +9,7 @@ void Initialize(BinaryTree *bt)
     bt->elements = 0;
 }
 
+//TODO
 bool Search(BinaryTree* bt, int key)
 {
     BinaryNode *currentNode = bt->root;
@@ -123,5 +124,5 @@ int Btsize(BinaryTree* bt)
 
 int Treeheight(BinaryTree* bt)
 {
-    
+
 }
