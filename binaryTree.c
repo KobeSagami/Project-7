@@ -11,7 +11,7 @@ void Initialize(BinaryTree *bt)
 
 bool Search(BinaryTree* bt, int key)
 {
-    
+
 }
 
 void Insert(BinaryTree* bt, int item)
@@ -21,7 +21,30 @@ void Insert(BinaryTree* bt, int item)
 
 void Printinorder(BinaryTree* bt)
 {
+    BinaryNode lastNode = bt->root;
+    BinaryNode currentNode = bt->root;
     
+    while (currentNode != NULL)
+    {
+        if (currentNode->leftNode == NULL)
+        {
+            printf("%d", currentNode->number);
+            
+            if (currentNode == bt->root)
+                break;
+            
+            if (currentNode->rightNode == NULL)
+                currentNode = lastNode;
+            else
+                lastNode = currentNode;
+                currentNode = currentNode->rightNode;
+        }
+        else
+        {
+            lastNode = currentNode;
+            currentNode = currentNode->leftNode;
+        }
+    }
 }
 
 void Printpreorder(BinaryTree* bt)
