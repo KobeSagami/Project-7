@@ -36,7 +36,7 @@ void Printpostorder(BinaryTree* bt)
 
 int Btsize(BinaryTree* bt)
 {
-    
+    return bt->elements;
 }
 
 int Treeheight(BinaryTree* bt)
