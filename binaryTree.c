@@ -14,7 +14,7 @@ bool Search(BinaryTree* bt, int key)
     
 }
 
-void Insert(BinaryTree* bt, int item)
+void Insert(BinaryTree* bt, int item)//HH
 {
     
 }
@@ -24,7 +24,7 @@ void Printinorder(BinaryTree* bt)
     
 }
 
-void Printpreorder(BinaryTree* bt)
+void Printpreorder(BinaryTree* bt)//HH
 {
     
 }
