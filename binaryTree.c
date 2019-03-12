@@ -22,15 +22,15 @@ bool Search(BinaryTree* bt, int key)
             return 0;
         }
         
-        // If the number we're searching for is greater than current node number, go to the right.
-        if (key >= currentNode->number)
-        {
-            currentNode = currentNode->rightNode;
-        }
-        // If the number we're searching for is less than the current node number, go to the left.
-        else if (key <= currentNode->number)
+        // If the number we're searching for is greater than current node number, go to the left.
+        if (key <= currentNode->number)
         {
             currentNode = currentNode->leftNode;
+        }
+        // If the number we're searching for is less than the current node number, go to the right.
+        else if (key >= currentNode->number)
+        {
+            currentNode = currentNode->rightNode;
         }
     }
     
@@ -48,6 +48,7 @@ void Insert(BinaryTree* bt, int item)//HH
     
     BinaryNode *currentNode;
     
+    // If the root is null that means there's no root yet and we can just insert our new node as the root.
     if (bt->root == NULL)
     {
         bt->root = newNode;
@@ -56,14 +57,22 @@ void Insert(BinaryTree* bt, int item)//HH
     {
         currentNode = bt->root;
         
-        while (item <= currentNode->number)
+        // While the node we're at is NOT null, repeat this loop. Otherwise, when it's null that means we're at the bottom and can insert our new node.
+        while (currentNode != NULL)
         {
-            currentNode = currentNode->leftNode;
+            // While the number we're inserting is less than the current node number, keep going to the left.
+            while (item <= currentNode->number)
+            {
+                currentNode = currentNode->leftNode;
+            }
+            
+            // If the number we're inserting is greater than the current node number, go to the right once.
+            if (item >= currentNode->number)
+            {
+                currentNode = currentNode->rightNode;
+            }
         }
-        while (item >= currentNode->number)
-        {
-            currentNode = currentNode->rightNode;
-        }
+        
         currentNode = newNode;
     }
 }
