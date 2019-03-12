@@ -13,3 +13,33 @@ bool Search(BinaryTree* bt, int key)
 {
     
 }
+
+void Insert(BinaryTree* bt, int item)
+{
+    
+}
+
+void Printinorder(BinaryTree* bt)
+{
+    
+}
+
+void Printpreorder(BinaryTree* bt)
+{
+    
+}
+
+void Printpostorder(BinaryTree* bt)
+{
+    
+}
+
+int Btsize(BinaryTree* bt)
+{
+    
+}
+
+int Treeheight(BinaryTree* bt)
+{
+    
+}
