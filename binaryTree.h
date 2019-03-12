@@ -15,12 +15,12 @@ typedef struct BinaryTree_Struct
     BinaryNode root;
 } BinaryTree;
 
-void initialize(binary_tree* bt);
-bool search(binary_tree* bt, int key);
-void insert(binary_tree* bt, int item);
-void printinorder(binary_tree* bt);
-void printpreorder(binary_tree* bt);
-void printpostorder(binary_tree* bt);
-int btsize(binary_tree* bt);
-int treeheight(binary_tree* bt);
+void Initialize(BinaryTree* bt);
+bool Search(BinaryTree* bt, int key);
+void Insert(BinaryTree* bt, int item);
+void Printinorder(BinaryTree* bt);
+void Printpreorder(BinaryTree* bt);
+void Printpostorder(BinaryTree* bt);
+int Btsize(BinaryTree* bt);
+int Treeheight(BinaryTree* bt);
 

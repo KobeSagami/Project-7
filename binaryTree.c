@@ -3,8 +3,13 @@
 #include <string.h>
 #include <ctype.h>
 
-void Initialize(BinaryTree *t)
+void Initialize(BinaryTree *bt)
 {
-    t->root = NULL;
-    t->elements = 0;
+    bt->root = NULL;
+    bt->elements = 0;
+}
+
+bool Search(BinaryTree* bt, int key)
+{
+    
 }
