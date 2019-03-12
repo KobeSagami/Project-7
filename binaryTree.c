@@ -11,7 +11,31 @@ void Initialize(BinaryTree *bt)
 
 bool Search(BinaryTree* bt, int key)
 {
-
+    BinaryNode *currentNode = bt->root;
+    
+    // If the number we're searching for is not the current node number, repeat this loop.
+    while (currentNode->number != key)
+    {
+        // If the nodes to the left of us and right of us are null that means we're at the bottom and we haven't found a match.
+        if ( (currentNode->leftNode == NULL) && (currentNode->rightNode == NULL) )
+        {
+            return 0;
+        }
+        
+        // If the number we're searching for is greater than current node number, go to the right.
+        if (key >= currentNode->number)
+        {
+            currentNode = currentNode->rightNode;
+        }
+        // If the number we're searching for is less than the current node number, go to the left.
+        else if (key <= currentNode->number)
+        {
+            currentNode = currentNode->leftNode;
+        }
+    }
+    
+    // Found.
+    return 1;
 }
 
 //TODO
