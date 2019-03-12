@@ -9,10 +9,11 @@
 #include <string.h>
 #include "binaryNode.h"
 
-typedef struct Binary_Tree_Struct{
-    binaryNode root;
-    
-} binary_tree;
+typedef struct BinaryTree_Struct
+{
+    int elements;
+    BinaryNode root;
+} BinaryTree;
 
 void initialize(binary_tree* bt);
 bool search(binary_tree* bt, int key);
