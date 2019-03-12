@@ -44,25 +44,27 @@ int main(void) {
         
 
    // Done with file, so close it
-   fclose(inFile);
+    fclose(inFile);
    
- printf("Print in order\n");
- printinorder(&bt);
- printf("\nPrint pre order\n");
- printpreorder(&bt);
- printf("\nPrint post order\n");
- printpostorder(&bt);
- printf("\n");
- found = search(&bt,33);
- if (found){
- printf("FOUND 33\n");
- }
- found = search(&bt,38);
- if (found){
- printf("FOUND 38\n");
- }
- printf("Number of elements in tree: %d\n", btsize(&bt));
- printf("Tree height: %d\n", treeheight(&bt)); 
+    printf("Print in order\n");
+    Printinorder(&bt);
+    printf("\nPrint pre order\n");
+    Printpreorder(&bt);
+    printf("\nPrint post order\n");
+    Printpostorder(&bt);
+    printf("\n");
+    found = Search(&bt,33);
+    if (found)
+    {
+        printf("FOUND 33\n");
+    }
+    found = Search(&bt,38);
+    if (found)
+    {
+        printf("FOUND 38\n");
+    }
+    printf("Number of elements in tree: %d\n", Btsize(&bt));
+    printf("Tree height: %d\n", Treeheight(&bt));
 
    
    return 0;

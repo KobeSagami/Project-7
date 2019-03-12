@@ -21,8 +21,8 @@ void Insert(BinaryTree* bt, int item)//HH
 
 void Printinorder(BinaryTree* bt)
 {
-    BinaryNode lastNode = bt->root;
-    BinaryNode currentNode = bt->root;
+    BinaryNode *lastNode = bt->root;
+    BinaryNode *currentNode = bt->root;
     
     while (currentNode != NULL)
     {

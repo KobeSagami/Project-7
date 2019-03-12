@@ -7,8 +7,8 @@
 typedef struct BinaryNode_struct
 {
     int number;
-    struct BinaryNode_struct* leftPtr;
-    struct BinaryNode_struct* rightPtr;
+    struct BinaryNode_struct* leftNode;
+    struct BinaryNode_struct* rightNode;
 } BinaryNode;
 
 bool HasLeaves(BinaryNode* bn);

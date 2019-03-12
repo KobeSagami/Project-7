@@ -12,7 +12,7 @@
 typedef struct BinaryTree_Struct
 {
     int elements;
-    BinaryNode root;
+    BinaryNode* root;
 } BinaryTree;
 
 void Initialize(BinaryTree* bt);
