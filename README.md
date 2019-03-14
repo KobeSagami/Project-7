@@ -5,4 +5,6 @@ Kobe Sagami
 Branden Ramsdell
 Hannah Hollenback
 
+This program creates a binary tree with functions for inserting, searching, ordering, and finding tree height.
+
 https://discord.gg/7wevPpP
