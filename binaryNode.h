@@ -12,6 +12,6 @@ typedef struct BinaryNode_struct
 } BinaryNode;
 
 bool HasLeaves(BinaryNode* bn);
-int DepthCheck(BinaryNode* bn);
+int MaxDepth(BinaryNode* bn);
 
 #endif /* binaryNode.h */
