@@ -38,12 +38,17 @@ void recursiveOrder(BinaryNode* currentNode){
 void recursivePre(BinaryNode* currentNode){
      if(currentNode != NULL){
           printf("%d ",currentNode->number);
-          recursiveOrder(currentNode->leftNode);
-          recursiveOrder(currentNode->rightNode);
+          recursivePre(currentNode->leftNode);
+          recursivePre(currentNode->rightNode);
      }
 }//end of recursivePre
 
 void recursivePost(BinaryNode* currentNode){
+     if(currentNode != NULL) {
+      recursivePost(currentNode->leftNode);
+      recursivePost(currentNode->rightNode);
+      printf("%d ", currentNode->number);
+     }
 }//end of recursivePost
      
      
