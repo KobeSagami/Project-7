@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./p7.exe 2 myfile.txt
