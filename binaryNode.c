@@ -10,7 +10,7 @@ bool HasLeaves(BinaryNode* bn){
      }
 }
 
-int DepthCheck(BinaryNode* bn){
+int MaxDepth(BinaryNode* bn){
      //null check
      if(bn == NULL){
           return 0;
@@ -21,8 +21,8 @@ int DepthCheck(BinaryNode* bn){
      }
      //recursively call, returning greater of two depths
      else{
-          unsigned int left = 1 + DepthCheck(bn->leftNode);
-          unsigned int right = 1 + DepthCheck(bn->rightNode);
+          unsigned int left = 1 + MaxDepth(bn->leftNode);
+          unsigned int right = 1 + MaxDepth(bn->rightNode);
           if(left >= right){
                return left;
           }
