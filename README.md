@@ -2,6 +2,7 @@
 
 CSCI 205 - Spring 2019
 Kobe Sagami
+Tucker Richlie
 Branden Ramsdell
 Hannah Hollenback
 
