@@ -7,7 +7,7 @@ void Initialize(BinaryTree *bt)
 {
     bt->root = NULL;
     bt->elements = 0;
-}
+}//end of Initialize
 
 //TODO
 bool Search(BinaryTree* bt, int key)
@@ -37,7 +37,7 @@ bool Search(BinaryTree* bt, int key)
     
     // Found.
     return 1;
-}
+}//end of Search
 
 //TODO
 void Insert(BinaryTree* bt, int item)//HH
@@ -91,36 +91,38 @@ void Insert(BinaryTree* bt, int item)//HH
             
         }
     }
-}
+}//end of Insert
 
 //TODO
 void Printinorder(BinaryTree* bt)
 {
-    BinaryNode *lastNode = bt->root;
-    BinaryNode *currentNode = bt->root;
+//     BinaryNode *lastNode = bt->root;
+//     BinaryNode *currentNode = bt->root;
     
-    while (currentNode != NULL)
-    {
-        if (currentNode->leftNode == NULL)
-        {
-            printf("%d", currentNode->number);
+//     while (currentNode != NULL)
+//     {
+//         if (currentNode->leftNode == NULL)
+//         {
+//             printf("%d", currentNode->number);
             
-            if (currentNode == bt->root)
-                break;
+//             if (currentNode == bt->root)
+//                 break;
             
-            if (currentNode->rightNode == NULL)
-                currentNode = lastNode;
-            else
-                lastNode = currentNode;
-                currentNode = currentNode->rightNode;
-        }
-        else
-        {
-            lastNode = currentNode;
-            currentNode = currentNode->leftNode;
-        }
-    }
-}
+//             if (currentNode->rightNode == NULL)
+//                 currentNode = lastNode;
+//             else
+//                 lastNode = currentNode;
+//                 currentNode = currentNode->rightNode;
+//         }
+//         else
+//         {
+//             lastNode = currentNode;
+//             currentNode = currentNode->leftNode;
+//         }
+//     }
+    BinaryNode *currentNode = bt->root;
+    recursiveOrder(currentNode);
+}//end of Printinorder
 
 void Printpreorder(BinaryTree* bt)//HH
 { 
@@ -132,13 +134,14 @@ void Printpreorder(BinaryTree* bt)//HH
 
 void Printpostorder(BinaryTree* bt)
 {
-    
+    BinaryNode *currentNode = bt->root;
+    recursivePost(currentNode);
 }//end of Printpostorder
 
 int Btsize(BinaryTree* bt)
 {
     return bt->elements;
-}
+}//end of Btsize
 
 int Treeheight(BinaryTree* bt)
 {
@@ -147,4 +150,4 @@ int Treeheight(BinaryTree* bt)
     //MaxDepth recursively calls to return greatest depth of the node's leaves
     return MaxDepth(bn);
     
-}
+}//end of Treeheight
