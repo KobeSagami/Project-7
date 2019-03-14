@@ -146,18 +146,9 @@ int Btsize(BinaryTree* bt)
 
 int Treeheight(BinaryTree* bt)
 {
-    int currentHeight;
-    bool finished;
-    BinaryNode* currentNode = bt->root;
-    
-    //FIX ME - TEMP
-    finished = true;
+    BinaryNode* bn = bt->root;
 
-    do{
-        if(HasLeaves(currentNode)){
-            //TODO
-            
-        }
-    } while (!finished);
+    //DepthCheck recursively calls to return greatest depth of the node's leaves
+    return DepthCheck(bn);
     
 }

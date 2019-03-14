@@ -9,3 +9,25 @@ bool HasLeaves(BinaryNode* bn){
           return false;
      }
 }
+
+int DepthCheck(BinaryNode* bn){
+     //null check
+     if(bn == NULL){
+          return 0;
+     }
+     //end of branch
+     else if(!HasLeaves){
+          return 1;
+     }
+     //recursively call, returning greater of two depths
+     else{
+          unsigned int left = 1 + DepthCheck(bn->leftNode);
+          unsigned int right = 1 + DepthCheck(bn->rightNode);
+          if(left >= right){
+               return left;
+          }
+          else{
+               return right;
+          }
+     }
+}

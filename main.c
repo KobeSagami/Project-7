@@ -16,14 +16,15 @@ int main(void) {
     bt = (BinaryTree*)malloc(sizeof(BinaryTree));
     Initialize(bt);
     Insert(bt, 100);
-    printf("%d\n", bt->root->number);
     Insert(bt, 50);
-    printf("%d\n", bt->root->leftNode->number);
     Insert(bt, 75);
-    printf("%d\n", bt->root->leftNode->rightNode->number);
+    Insert(bt, 25);
+    //Insert(bt, 1);
+
+    printf("%d\n", Treeheight(bt));
 
     
-    // Open file
+    /* // Open file
     printf("Opening file myfile.txt.\n");
     inFile = fopen("myfile.txt", "r");
     
@@ -79,7 +80,7 @@ int main(void) {
         printf("FOUND 38\n");
     }
     printf("Number of elements in tree: %d\n", Btsize(&bt));
-    printf("Tree height: %d\n", Treeheight(&bt));
+    printf("Tree height: %d\n", Treeheight(&bt)); */
 
    
    return 0;
