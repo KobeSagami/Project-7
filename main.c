@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "binaryTree.h"
 
-int main(void) {
+int main(int argc, char* argv[]) {
     FILE* inFile = NULL; // File pointer
     int fileNum;         // Data value from file
     int numRead;
@@ -10,18 +10,6 @@ int main(void) {
     int i;
     BinaryTree* bt = NULL;
     bool found = false;
-    
-    //TESTING
-    bt = (BinaryTree*)malloc(sizeof(BinaryTree));
-    Initialize(bt);
-    Insert(bt, 100);
-    Insert(bt, 50);
-    Insert(bt, 75);
-    Insert(bt, 25);
-    Insert(bt, 1);
-    
-    printf("%d\n", Treeheight(bt));
-    
     
     // Open file
     printf("Opening file myfile.txt.\n");
@@ -56,7 +44,12 @@ int main(void) {
         }
         break;
     }
-    
+   
+    bt = (BinaryTree*)malloc(sizeof(BinaryTree));
+    Initialize(&bt);
+    for (i = 0; i < numElements; ++i {
+      Insert(&bt, i);
+    } 
     
     // Done with file, so close it
     fclose(inFile);
