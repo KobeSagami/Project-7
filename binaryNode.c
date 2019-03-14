@@ -36,6 +36,11 @@ void recursiveOrder(BinaryNode* currentNode){
 }//end of recursiveOrder
 
 void recursivePre(BinaryNode* currentNode){
+     if(currentNode != NULL){
+          printf("%d ",currentNode->number);
+          recursiveOrder(currentNode->leftNode);
+          recursiveOrder(currentNode->rightNode);
+     }
 }//end of recursivePre
 
 void recursivePost(BinaryNode* currentNode){
