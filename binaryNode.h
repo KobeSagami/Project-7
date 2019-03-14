@@ -14,4 +14,8 @@ typedef struct BinaryNode_struct
 bool HasLeaves(BinaryNode* bn);
 int MaxDepth(BinaryNode* bn);
 
+void recursiveOrder(BinaryNode* currentNode);
+void recursivePre(BinaryNode* currentNode);
+void recursivePost(BinaryNode* currentNode);
+
 #endif /* binaryNode.h */
