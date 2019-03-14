@@ -33,6 +33,11 @@ int MaxDepth(BinaryNode* bn){
 }//end of MaxDepth
 
 void recursiveOrder(BinaryNode* currentNode){
+      if(currentNode != NULL) {
+          recursiveOrder(currentNode->leftNode);
+          printf("%d ",currentNode->number);          
+          recursiveOrder(currentNode->rightNode);
+   }
 }//end of recursiveOrder
 
 void recursivePre(BinaryNode* currentNode){
@@ -45,9 +50,9 @@ void recursivePre(BinaryNode* currentNode){
 
 void recursivePost(BinaryNode* currentNode){
      if(currentNode != NULL) {
-      recursivePost(currentNode->leftNode);
-      recursivePost(currentNode->rightNode);
-      printf("%d ", currentNode->number);
+          recursivePost(currentNode->leftNode);
+          recursivePost(currentNode->rightNode);
+          printf("%d ", currentNode->number);
      }
 }//end of recursivePost
      
