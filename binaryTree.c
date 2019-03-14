@@ -108,9 +108,16 @@ void Printinorder(BinaryTree* bt)
 }
 
 void Printpreorder(BinaryTree* bt)//HH
-{
+{ 
+    BinaryNode *currentNode = bt->root;
+    if(bt->root != NULL){
+        printf("%d ",currentNode->number);
+        Printpreorder(currentNode->leftnode);
+        Printpreorder(currentNode->rightnode);
+    }
+        
     
-}
+}//end of Printpreorder
 
 void Printpostorder(BinaryTree* bt)
 {
