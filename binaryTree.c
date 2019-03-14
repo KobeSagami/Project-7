@@ -41,40 +41,55 @@ bool Search(BinaryTree* bt, int key)
 
 //TODO
 void Insert(BinaryTree* bt, int item)//HH
-{
-    BinaryNode *newNode = (BinaryNode*) malloc(sizeof(BinaryNode));
-    newNode->number = item;
-    newNode->leftNode = NULL;
-    newNode->rightNode = NULL;
-    
-    BinaryNode *currentNode;
-    
-    // If the root is null that means there's no root yet and we can just insert our new node as the root.
-    if (bt->root == NULL)
-    {
-        bt->root = newNode;
+{    
+    BinaryNode *currentNode = NULL, *newNode = NULL;
+    bool finished = false;
+
+    //insert at root if first element
+    if(bt->root == NULL){
+        bt->root = (BinaryNode*) malloc(sizeof(BinaryNode));
+        bt->root->number = item;
+        bt->root->leftNode = NULL;
+        bt->root->rightNode = NULL;
+
+        bt->elements++;
+        return;
     }
-    else
+
+    //create newNode and start traversal from root
+    currentNode = bt->root;
+    newNode = (BinaryNode*) malloc(sizeof(BinaryNode));
+    newNode->number     = item;
+    newNode->leftNode   = NULL;
+    newNode->rightNode  = NULL;
+    
+    //loop until destination found
+    while (!finished)
     {
-        currentNode = bt->root;
-        
-        // While the node we're at is NOT null, repeat this loop. Otherwise, when it's null that means we're at the bottom and can insert our new node.
-        while (currentNode != NULL)
-        {
-            // While the number we're inserting is less than the current node number, keep going to the left.
-            while (item <= currentNode->number)
-            {
+        // While the number we're inserting is less than the current node number, keep going to the left.
+        if(item <= currentNode->number){
+            if(currentNode->leftNode == NULL){
+                currentNode->leftNode = newNode;
+                bt->elements++;
+                return;
+            }
+            else{
                 currentNode = currentNode->leftNode;
             }
             
-            // If the number we're inserting is greater than the current node number, go to the right once.
-            if (item >= currentNode->number)
-            {
+        }
+        //else roll to the right and check
+        else{
+            if(currentNode->rightNode == NULL){
+                currentNode->rightNode = newNode;
+                bt->elements++;
+                return;
+            }
+            else{
                 currentNode = currentNode->rightNode;
             }
+            
         }
-        
-        currentNode = newNode;
     }
 }
 
@@ -131,5 +146,18 @@ int Btsize(BinaryTree* bt)
 
 int Treeheight(BinaryTree* bt)
 {
+    int currentHeight;
+    bool finished;
+    BinaryNode* currentNode = bt->root;
+    
+    //FIX ME - TEMP
+    finished = true;
 
+    do{
+        if(HasLeaves(currentNode)){
+            //TODO
+            
+        }
+    } while (!finished);
+    
 }

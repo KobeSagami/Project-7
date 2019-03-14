@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include "binaryTree.h"
 
 int main(void) {
     FILE* inFile = NULL; // File pointer
@@ -7,6 +8,20 @@ int main(void) {
     int numRead;
     int numElements=0;
     int i;
+    BinaryTree* bt = NULL;
+    bool found = false;
+
+
+    //TESTING
+    bt = (BinaryTree*)malloc(sizeof(BinaryTree));
+    Initialize(bt);
+    Insert(bt, 100);
+    printf("%d\n", bt->root->number);
+    Insert(bt, 50);
+    printf("%d\n", bt->root->leftNode->number);
+    Insert(bt, 75);
+    printf("%d\n", bt->root->leftNode->rightNode->number);
+
     
     // Open file
     printf("Opening file myfile.txt.\n");
