@@ -6,12 +6,11 @@ int main(void) {
     FILE* inFile = NULL; // File pointer
     int fileNum;         // Data value from file
     int numRead;
-    int numElements=0;
+    int numElements = 0;
     int i;
     BinaryTree* bt = NULL;
     bool found = false;
-
-
+    
     //TESTING
     bt = (BinaryTree*)malloc(sizeof(BinaryTree));
     Initialize(bt);
@@ -19,12 +18,12 @@ int main(void) {
     Insert(bt, 50);
     Insert(bt, 75);
     Insert(bt, 25);
-    //Insert(bt, 1);
-
-    printf("%d\n", Treeheight(bt));
-
+    Insert(bt, 1);
     
-    /* // Open file
+    printf("%d\n", Treeheight(bt));
+    
+    
+    // Open file
     printf("Opening file myfile.txt.\n");
     inFile = fopen("myfile.txt", "r");
     
@@ -50,38 +49,44 @@ int main(void) {
     //puts the elements in an array
     while(!feof(inFile))
     {
-        for(i=0;i<numElements;i++)
+        for (i = 0; i < numElements; ++i)
         {
-            numRead = fscanf(inFile, "%d",&fileNum);
-            treeArray[i]=fileNum;
+            numRead = fscanf(inFile, "%d", &fileNum);
+            treeArray[i] = fileNum;
         }
         break;
     }
-        
-
-   // Done with file, so close it
+    
+    
+    // Done with file, so close it
     fclose(inFile);
-   
+    
     printf("Print in order\n");
-    Printinorder(&bt);
+    Printinorder(bt);
+    
     printf("\nPrint pre order\n");
-    Printpreorder(&bt);
+    Printpreorder(bt);
+    
     printf("\nPrint post order\n");
-    Printpostorder(&bt);
+    Printpostorder(bt);
+    
     printf("\n");
-    found = Search(&bt,33);
+    found = Search(bt, 33);
     if (found)
     {
         printf("FOUND 33\n");
     }
-    found = Search(&bt,38);
+    
+    found = Search(bt, 38);
     if (found)
     {
         printf("FOUND 38\n");
     }
-    printf("Number of elements in tree: %d\n", Btsize(&bt));
-    printf("Tree height: %d\n", Treeheight(&bt)); */
-
-   
-   return 0;
+    
+    printf("Number of elements in tree: %d\n", Btsize(bt));
+    
+    printf("Tree height: %d\n", Treeheight(bt));
+    
+    
+    return 0;
 }
