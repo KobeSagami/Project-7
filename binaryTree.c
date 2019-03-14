@@ -125,11 +125,7 @@ void Printinorder(BinaryTree* bt)
 void Printpreorder(BinaryTree* bt)//HH
 { 
     BinaryNode *currentNode = bt->root;
-    if(bt->root != NULL){
-        printf("%d ",currentNode->number);
-        Printpreorder(currentNode->leftNode);
-        Printpreorder(currentNode->rightNode);
-    }
+    recursivePre(currentNode);
         
     
 }//end of Printpreorder
@@ -137,7 +133,7 @@ void Printpreorder(BinaryTree* bt)//HH
 void Printpostorder(BinaryTree* bt)
 {
     
-}
+}//end of Printpostorder
 
 int Btsize(BinaryTree* bt)
 {
