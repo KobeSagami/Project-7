@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
     bt = (BinaryTree*)malloc(sizeof(BinaryTree));
     Initialize(bt);
     for (i = 0; i < numElements; ++i) {
-      Insert(bt, i);
+      Insert(bt, treeArray[i]);
     } 
     
     // Done with file, so close it
