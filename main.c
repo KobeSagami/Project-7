@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
     
     // Open file
     printf("Opening file myfile.txt.\n");
-    inFile = fopen("myfile.txt", "r");
+    inFile = fopen(argv[1], "r");
     
     if (inFile == NULL)
     {
@@ -44,11 +44,11 @@ int main(int argc, char* argv[]) {
         }
         break;
     }
-   
+    // Initializes BST and inserts items into the BST
     bt = (BinaryTree*)malloc(sizeof(BinaryTree));
-    Initialize(&bt);
-    for (i = 0; i < numElements; ++i {
-      Insert(&bt, i);
+    Initialize(bt);
+    for (i = 0; i < numElements; ++i) {
+      Insert(bt, i);
     } 
     
     // Done with file, so close it
