@@ -16,7 +16,7 @@ int MaxDepth(BinaryNode* bn){
           return 0;
      }
      //end of branch
-     else if(!HasLeaves){
+     else if(!HasLeaves(bn)){
           return 1;
      }
      //recursively call, returning greater of two depths

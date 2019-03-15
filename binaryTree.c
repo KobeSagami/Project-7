@@ -79,7 +79,7 @@ void Insert(BinaryTree* bt, int item)//HH
             
         }
         //else roll to the right and check
-        else{
+        else if (item > currentNode->number){
             if(currentNode->rightNode == NULL){
                 currentNode->rightNode = newNode;
                 bt->elements++;
@@ -145,9 +145,7 @@ int Btsize(BinaryTree* bt)
 
 int Treeheight(BinaryTree* bt)
 {
-    BinaryNode* bn = bt->root;
-
     //MaxDepth recursively calls to return greatest depth of the node's leaves
-    return MaxDepth(bn);
+    return MaxDepth(bt->root);
     
 }//end of Treeheight
