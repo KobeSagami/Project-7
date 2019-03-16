@@ -11,6 +11,12 @@ int main(int argc, char* argv[]) {
     BinaryTree* bt = NULL;
     bool found = false;
     
+    //Checks for correct number of command line arguments
+    if (argc < 2 || argc > 2) {
+      printf("Too few or too many command line arguments.");
+      return 1;
+    }
+    
     // Open file
     printf("Opening file myfile.txt.\n");
     inFile = fopen(argv[1], "r");
@@ -18,7 +24,7 @@ int main(int argc, char* argv[]) {
     if (inFile == NULL)
     {
         printf("Could not open file myfile.txt.\n");
-        return -1; // -1 indicates error
+        return 1; // -1 indicates error
     }
     
     //gets the number of elements in the file
