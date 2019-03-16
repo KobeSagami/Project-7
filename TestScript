@@ -1,3 +1,92 @@
 #!/bin/bash
 
-./p7.exe 2 myfile.txt
+
+# Testing first txt file.
+./p7.exe 2 myfile.txt > file1
+
+result="$(diff f1 file1)"
+
+
+if [ $? -eq 0 ]
+
+then
+
+echo "passed test1"
+
+else
+
+echo "failed test1"
+
+echo $result
+
+# Testing second txt file.
+./p7.exe 2 myfile2.txt > file2
+
+result="$(diff f2 file2)"
+
+
+if [ $? -eq 0 ]
+
+then
+
+echo "passed test2"
+
+else
+
+echo "failed test2"
+
+echo $result
+
+# Testing third txt file.
+./p7.exe 2 myfile3.txt > file3
+
+result="$(diff f3 file3)"
+
+
+if [ $? -eq 0 ]
+
+then
+
+echo "passed test3"
+
+else
+
+echo "failed test3"
+
+echo $result
+
+# Testing with wrong number of parameters.
+./p7.exe 1 myfile.txt > file4
+
+result="$(diff f4 file4)"
+
+
+if [ $? -eq 1 ]
+
+then
+
+echo "Passed parameter check"
+
+else
+
+echo "Failed parameter check"
+
+echo $result
+
+# Testing with invalid input file.
+./p7.exe 2 myfile4.txt > file5
+
+result="$(diff f5 file5)"
+
+
+if [ $? -eq 1 ]
+
+then
+
+echo "Passed wrong input check"
+
+else
+
+echo "Failed wrong input check"
+
+echo $result
