@@ -146,6 +146,6 @@ int Btsize(BinaryTree* bt)
 int Treeheight(BinaryTree* bt)
 {
     //MaxDepth recursively calls to return greatest depth of the node's leaves
-    return MaxDepth(bt->root);
+    return MaxDepth(bt->root) - 1;
     
 }//end of Treeheight
